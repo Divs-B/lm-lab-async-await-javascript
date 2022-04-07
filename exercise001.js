@@ -11,10 +11,24 @@ const promise = new Promise((resolve, reject) => {
   }
 })
 
-promise
+/* result after consuming promises with .then and .catch */
+/*promise
   .then(successResult => {
     console.log('Yay! Promise resolved with response: ' + successResult)
   })
   .catch(error => {
     console.log('Boo. Promise rejected with response: ' + error)
   })
+  */
+
+/* result after using async/await on promise above. For more readable and maintainable code */
+async function checkRandomIntegerPromise () {
+  try {
+    const result = await promise
+    console.log('Yay! Promise resolved with response: ' + result)
+  } catch (error) {
+    console.log('Boo. Promise rejected with response: ' + error)
+  }
+}
+
+checkRandomIntegerPromise()
